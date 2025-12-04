@@ -1,6 +1,7 @@
 import React, { useState, useRef } from "react";
 import { toPng } from "html-to-image";
 import { encodeCardToUrl } from "./utils/urlEncoder";
+import "./styles/responsive.css";
 
 export default function AppShowcase() {
   const [cardData, setCardData] = useState({
@@ -31,54 +32,33 @@ export default function AppShowcase() {
     <div style={styles.container}>
       {/* 顶部 Header */}
       <header style={styles.header}>
-        <div style={styles.headerInner}>
+        <div style={styles.headerInner} className="header-inner">
           <div style={styles.brandContainer}>
             <span style={styles.brand}>KEY CARD</span>
             <div style={styles.brandAccent}></div>
           </div>
-          <nav style={styles.nav}>
-            <a href="#"
-               style={styles.navLink}
-               onMouseEnter={e => {
-                 e.target.style.color = '#007BFF';
-                 e.target.style.borderBottom = '2px solid #007BFF';
-               }}
-               onMouseLeave={e => {
-                 e.target.style.color = '#fff';
-                 e.target.style.borderBottom = 'none';
-               }}
-            >文档</a>
-            <a href="#"
-               style={styles.navLink}
-               onMouseEnter={e => {
-                 e.target.style.color = '#007BFF';
-                 e.target.style.borderBottom = '2px solid #007BFF';
-               }}
-               onMouseLeave={e => {
-                 e.target.style.color = '#fff';
-                 e.target.style.borderBottom = 'none';
-               }}
-            >GitHub</a>
+          <nav style={styles.nav} className="nav">
+            {/* 导航链接已移除 */}
           </nav>
         </div>
       </header>
 
-      <div style={styles.mainLayout}>
+      <div style={styles.mainLayout} className="main-layout">
         {/* 左侧编辑区 - 增强视觉层次 */}
         <div style={styles.editorSection}>
           <div style={styles.sectionHeader}>
-            <h2 style={styles.sectionTitle}>编辑名片</h2>
+            <h2 style={styles.sectionTitle} className="section-title">编辑名片</h2>
             <div style={styles.titleDecoration}></div>
           </div>
           
-          <div style={styles.editorCard}>
+          <div style={styles.editorCard} className="editor-card">
             <div style={styles.inputGroup}>
               <div style={styles.inputLabelContainer}>
                 <span style={styles.inputLabel}>姓名</span>
                 <div style={styles.labelAccent}></div>
               </div>
               <input
-                style={styles.inputField}
+                style={styles.inputField} className="input-field"
                 value={cardData.name}
                 onChange={(e) => update("name", e.target.value)}
                 placeholder="输入你的名字"
@@ -101,7 +81,7 @@ export default function AppShowcase() {
                 <div style={styles.labelAccent}></div>
               </div>
               <input
-                style={styles.inputField}
+                style={styles.inputField} className="input-field"
                 value={cardData.where}
                 onChange={(e) => update("where", e.target.value)}
                 placeholder="工作场所或常去的地方"
@@ -124,7 +104,7 @@ export default function AppShowcase() {
                 <div style={styles.labelAccent}></div>
               </div>
               <input
-                style={styles.inputField}
+                style={styles.inputField} className="input-field"
                 value={cardData.teach}
                 onChange={(e) => update("teach", e.target.value)}
                 placeholder="你的专业技能或知识"
@@ -147,7 +127,7 @@ export default function AppShowcase() {
                 <div style={styles.labelAccent}></div>
               </div>
               <input
-                style={styles.inputField}
+                style={styles.inputField} className="input-field"
                 value={cardData.learn}
                 onChange={(e) => update("learn", e.target.value)}
                 placeholder="你想要学习的新技能"
@@ -171,7 +151,7 @@ export default function AppShowcase() {
         {/* 右侧预览区 - 增强视觉冲击 */}
         <div style={styles.previewSection}>
           <div style={styles.sectionHeader}>
-            <h2 style={styles.sectionTitle}>实时预览</h2>
+            <h2 style={styles.sectionTitle} className="section-title">实时预览</h2>
             <div style={styles.titleDecoration}></div>
           </div>
 
@@ -180,36 +160,36 @@ export default function AppShowcase() {
             <div style={styles.cardShadow}></div>
             
             {/* 主名片 */}
-            <div ref={cardRef} style={styles.previewCard}>
+            <div ref={cardRef} style={styles.previewCard} className="preview-card">
               <div style={styles.cardHeader}>
                 <div style={styles.nameBadge}>
-                  <h1 style={styles.cardName}>{cardData.name}</h1>
+                  <h1 style={styles.cardName} className="card-name">{cardData.name}</h1>
                   <div style={styles.nameUnderline}></div>
                 </div>
               </div>
 
               <div style={styles.cardContent}>
                 <div style={styles.infoItem}>
-                  <div style={styles.infoIcon}>📍</div>
+                  <div style={styles.infoIcon} className="info-icon">📍</div>
                   <div style={styles.infoText}>
                     <div style={styles.infoLabel}>我经常在的地方</div>
-                    <div style={styles.infoValue}>{cardData.where}</div>
+                    <div style={styles.infoValue} className="info-value">{cardData.where}</div>
                   </div>
                 </div>
 
                 <div style={styles.infoItem}>
-                  <div style={styles.infoIcon}>🎓</div>
+                  <div style={styles.infoIcon} className="info-icon">🎓</div>
                   <div style={styles.infoText}>
                     <div style={styles.infoLabel}>我可以教你</div>
-                    <div style={styles.infoValue}>{cardData.teach}</div>
+                    <div style={styles.infoValue} className="info-value">{cardData.teach}</div>
                   </div>
                 </div>
 
                 <div style={styles.infoItem}>
-                  <div style={styles.infoIcon}>🚀</div>
+                  <div style={styles.infoIcon} className="info-icon">🚀</div>
                   <div style={styles.infoText}>
                     <div style={styles.infoLabel}>我很想学习</div>
-                    <div style={styles.infoValue}>{cardData.learn}</div>
+                    <div style={styles.infoValue} className="info-value">{cardData.learn}</div>
                   </div>
                 </div>
               </div>
@@ -222,10 +202,10 @@ export default function AppShowcase() {
 
             {/* 下载与分享按钮区域（已替换为水平按钮组） */}
             <div style={styles.actionArea}>
-              <div style={styles.buttonRow}>
+              <div style={styles.buttonRow} className="button-row">
                 {/* 下载按钮（保持原有 downloadCard 行为与交互） */}
                 <button
-                  style={styles.downloadButton}
+                  style={styles.downloadButton} className="download-button"
                   onClick={downloadCard}
                   onMouseDown={(e) => {
                     styles.buttonMouseDown(e);
@@ -241,12 +221,12 @@ export default function AppShowcase() {
                   }}
                 >
                   <span style={styles.buttonText}>下载名片</span>
-                  <div style={styles.buttonAccent}></div>
+                  <div style={styles.buttonAccent} className="button-accent"></div>
                 </button>
 
                 {/* 分享链接按钮（新） */}
                 <button
-                  style={styles.downloadButton}
+                  style={styles.downloadButton} className="download-button"
                   onClick={() => {
                     const url = encodeCardToUrl(cardData);
                     navigator.clipboard.writeText(url);
@@ -266,7 +246,7 @@ export default function AppShowcase() {
                   }}
                 >
                   <span style={styles.buttonText}>分享链接</span>
-                  <div style={styles.buttonAccent}></div>
+                  <div style={styles.buttonAccent} className="button-accent"></div>
                 </button>
               </div>
 

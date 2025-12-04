@@ -1,0 +1,142 @@
+/* 响应式样式 */
+
+/* 移动端优化 */
+@media (max-width: 768px) {
+  /* 主布局 */
+  .main-layout {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+    margin: 24px auto !important;
+    padding: 0 16px !important;
+  }
+
+  /* 头部 */
+  .header-inner {
+    padding: 0 16px !important;
+    flex-direction: column !important;
+    gap: 16px !important;
+  }
+
+  /* 导航 */
+  .nav {
+    gap: 16px !important;
+  }
+
+  /* 编辑卡片 */
+  .editor-card {
+    padding: 24px !important;
+    box-shadow: 4px 4px 0 #1a1a1a !important;
+  }
+
+  /* 预览卡片 */
+  .preview-card {
+    padding: 24px !important;
+  }
+
+  /* 卡片名称 */
+  .card-name {
+    font-size: 28px !important;
+  }
+
+  /* 信息值 */
+  .info-value {
+    font-size: 14px !important;
+  }
+
+  /* 按钮行 */
+  .button-row {
+    flex-direction: column !important;
+    gap: 12px !important;
+    align-items: center !important;
+  }
+
+  /* 下载按钮 */
+  .download-button {
+    padding: 16px 24px !important;
+    font-size: 14px !important;
+    width: 100% !important;
+    max-width: 280px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    box-sizing: border-box !important;
+    position: relative !important;
+    overflow: hidden !important;
+  }
+
+  /* 按钮装饰元素 */
+  .button-accent {
+    right: -2px !important;
+    bottom: -2px !important;
+    left: 2px !important;
+    top: 2px !important;
+  }
+
+  /* 章节标题 */
+  .section-title {
+    font-size: 24px !important;
+  }
+
+  /* 输入字段 */
+  .input-field {
+    font-size: 14px !important;
+    padding: 12px 14px !important;
+  }
+
+  /* 信息图标 */
+  .info-icon {
+    width: 32px !important;
+    height: 32px !important;
+    font-size: 16px !important;
+  }
+}
+
+/* 平板设备优化 */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .main-layout {
+    gap: 32px !important;
+    padding: 0 20px !important;
+  }
+  
+  .preview-card {
+    padding: 32px !important;
+  }
+  
+  .card-name {
+    font-size: 32px !important;
+  }
+}
+
+/* 小屏幕手机优化 */
+@media (max-width: 480px) {
+  .main-layout {
+    margin: 16px auto !important;
+    gap: 24px !important;
+  }
+  
+  .editor-card,
+  .preview-card {
+    padding: 20px !important;
+  }
+  
+  .card-name {
+    font-size: 24px !important;
+  }
+  
+  .section-title {
+    font-size: 20px !important;
+  }
+  
+  .brand {
+    font-size: 20px !important;
+  }
+  
+  .nav-link {
+    font-size: 12px !important;
+  }
+  
+  .download-button {
+    padding: 14px 20px !important;
+    font-size: 13px !important;
+    max-width: 240px !important;
+  }
+}
