@@ -207,18 +207,10 @@ export default function AppShowcase() {
                 <button
                   style={styles.downloadButton} className="download-button"
                   onClick={downloadCard}
-                  onMouseDown={(e) => {
-                    styles.buttonMouseDown(e);
-                  }}
-                  onMouseUp={(e) => {
-                    styles.buttonMouseUp(e);
-                  }}
-                  onMouseEnter={(e) => {
-                    styles.buttonMouseEnter(e);
-                  }}
-                  onMouseLeave={(e) => {
-                    styles.buttonMouseLeave(e);
-                  }}
+                  onMouseDown={styles.buttonMouseDown}
+                  onMouseUp={styles.buttonMouseUp}
+                  onMouseEnter={styles.buttonMouseEnter}
+                  onMouseLeave={styles.buttonMouseLeave}
                 >
                   <span style={styles.buttonText}>下载名片</span>
                   <div style={styles.buttonAccent} className="button-accent"></div>
@@ -232,18 +224,10 @@ export default function AppShowcase() {
                     navigator.clipboard.writeText(url);
                     alert("已复制分享链接：\n" + url);
                   }}
-                  onMouseDown={(e) => {
-                    styles.buttonMouseDown(e);
-                  }}
-                  onMouseUp={(e) => {
-                    styles.buttonMouseUp(e);
-                  }}
-                  onMouseEnter={(e) => {
-                    styles.buttonMouseEnter(e);
-                  }}
-                  onMouseLeave={(e) => {
-                    styles.buttonMouseLeave(e);
-                  }}
+                  onMouseDown={styles.buttonMouseDown}
+                  onMouseUp={styles.buttonMouseUp}
+                  onMouseEnter={styles.buttonMouseEnter}
+                  onMouseLeave={styles.buttonMouseLeave}
                 >
                   <span style={styles.buttonText}>分享链接</span>
                   <div style={styles.buttonAccent} className="button-accent"></div>
