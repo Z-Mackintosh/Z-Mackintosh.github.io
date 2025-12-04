@@ -35,6 +35,8 @@ jobs:
       - name: Build
         run: npm run build
         working-directory: ./frontend
+        env:
+          NODE_ENV: production
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
