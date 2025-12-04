@@ -1,0 +1,126 @@
+:root {
+  /* 色彩系统 */
+  --color-bg: #fefdfb;
+  --color-text: #111;
+  --color-border: #000000;
+  --color-accent: #007BFF;
+
+  /* 辅助灰 */
+  --gray-600: #444;
+  --gray-400: #888;
+
+  /* 字体 */
+  --font-body: 'Inter', sans-serif;
+  --font-size-base: 16px;
+
+  /* 间距体系 */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+}
+/* Reset —— 粗野主义需要统一的硬朗基础 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  font-family: var(--font-body);
+  background: var(--color-bg);
+  color: var(--color-text);
+  height: 100%;
+}
+
+/* 链接风格 —— 粗野主义特征 */
+a {
+  color: var(--color-accent);
+  text-decoration: underline;
+}
+
+/* 宽度限制 + 居中 */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--space-md);
+}
+:root {
+  --bg: #fafafa; /* 更柔和的白色背景 */
+  --panel-bg: #ffffff;
+  --border: #000;
+  --accent: var(--color-accent);
+}
+
+/* 页面背景 + 中心布局改善 */
+body {
+  background: var(--bg);
+  font-family: 'Inter', system-ui, sans-serif;
+  color: #111;
+  letter-spacing: 0.2px;
+}
+/* 输入框样式升级 */
+input, textarea {
+  border: 2px solid var(--border);
+  padding: 10px;
+  font-size: 14px;
+  width: 100%;
+  background: #fff;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* 聚焦光效 */
+input:focus, textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(0, 153, 255, 0.2);
+  outline: none;
+}
+.card-preview {
+  width: 100%;
+  max-width: 360px;
+  background: #fff;
+  border: 2px solid var(--border);
+  padding: 28px;
+  border-radius: 14px;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+/* hover 浮起来一点 */
+.card-preview:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+}
+button {
+  padding: 12px 22px;
+  border: 2px solid var(--border);
+  border-radius: 8px;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: filter 0.15s ease, transform 0.15s ease;
+}
+
+button:hover {
+  filter: brightness(1.12);
+}
+
+button:active {
+  transform: scale(0.97);
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: 40px;
+  padding: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
